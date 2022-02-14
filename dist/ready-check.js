@@ -1,3 +1,5 @@
+let discordIntegration = function(){};
+
 // Register Game Settings
 Hooks.once("init", function(){
   game.settings.register("ready-check", "showChatMessagesForUserUpdates", {
@@ -35,11 +37,35 @@ Hooks.once("init", function(){
     default: 'modules/ready-check/sounds/notification.mp3',
     type: String
   });
+
+  game.settings.register("ready-check", "enableDiscordIntegration", {
+    name: game.i18n.localize("READYCHECK.SettingsEnableDiscordIntegrationTitle"),
+    hint: game.i18n.localize("READYCHECK.SettingsEnableDiscordIntegrationHint"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
+  game.settings.register("ready-check", "statusResetOnLoad", {
+    name: game.i18n.localize("READYCHECK.SettingsStatusResetOnLoadTitle"),
+    hint: game.i18n.localize("READYCHECK.SettingsStatusResetOnLoadHint"),
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean
+  });
 });
 
 // Reset Status When the Game is Ready
 Hooks.once("ready", async function(){
-  await setAllToNotReady();
+  if (game.settings.get('ready-check', 'statusResetOnLoad')) {
+    await setAllToNotReady();
+  }
+  if (game.settings.get('ready-check', 'enableDiscordIntegration')) {
+    discordIntegration = await import("../discord-integration/DiscordIntegration.js");
+    console.log(discordIntegration);
+  }
 });
 
 // Set Up Buttons and Socket Stuff
@@ -119,6 +145,7 @@ function displayGmDialog(){
     status: {icon: "<i class='fas fa-hourglass-half'></i>",
              label: game.i18n.localize("READYCHECK.GmDialogButtonStatus"),
              callback: displayStatusUpdateDialog
+             
     }
   };
   new Dialog({
@@ -129,6 +156,7 @@ function displayGmDialog(){
   }).render(true);
 }
 
+// TODO: expose this function, allow an alternate ready check message to be supplied as a parameter
 // INITIATE A READY CHECK (GM)
 async function initReadyCheck(){
   if(game.user.isGM){
@@ -140,15 +168,19 @@ async function initReadyCheck(){
   } else {
     ui.notifications.error(game.i18n.localize("READYCHECK.ErrorNotGM"));
   }
+  if (discordIntegrationEnabled) {
+    sendDiscordMessage("test");
+  }
+  // TODO: Send Discord Message pinging all players to notify them of the ready check
 }
 
-// DISPLAY STATUS UPDATE DIALOG AND SEND RESPONSE TO GM
+// DISPLAY STATUS UPDATE DIALOG AND SEND RESPONSE TO GM, TODO: allow an alternate ready check message to be supplied as a parameter
 function displayStatusUpdateDialog(){
   let data = {action: 'update', ready: false, userId: game.user.data._id};
   let buttons = {
     yes: {icon: "<i class='fas fa-check'></i>",
           label: game.i18n.localize("READYCHECK.StatusReady"),
-          callback: () => { data.ready = true; updateReadyStatus(data); displayStatusUpdateChatMessage(data);}
+          callback: () => { data.ready = true; updateReadyStatus(data); displayStatusUpdateChatMessage(data); /* TODO: check for all users being ready, if so send GM a message */}
     },
     no:  {icon: "<i class='fas fa-times'></i>",
           label: game.i18n.localize("READYCHECK.StatusNotReady"),
@@ -157,7 +189,7 @@ function displayStatusUpdateDialog(){
   };
 
   new Dialog({
-    title: game.i18n.localize("READYCHECK.DialogTitleStatusUpdate"),
+    title: game.i18n.localize("READYCHECK.DialogTitleStatusUpdate"), // TODO: use the supplied message instead of this
     content: `<p>${game.i18n.localize("READYCHECK.DialogContentStatusUpdate")}</p>`,
     buttons: buttons,
     default: "yes"

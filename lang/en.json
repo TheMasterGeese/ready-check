@@ -32,5 +32,11 @@
   "READYCHECK.StatusNotReady": "Not Ready",
 
   "READYCHECK.UiChangeButton": "Change Ready Status",
-  "READYCHECK.UiGmButton": "Initiate Ready Check or Change Ready Status"
+  "READYCHECK.UiGmButton": "Initiate Ready Check or Change Ready Status",
+
+  "READYCHECK.SettingsEnableDiscordIntegrationTitle": "Enable Discord Integration",
+  "READYCHECK.SettingsEnableDiscordIntegrationHint": "Use Discord Integration Library mod to forward ready check notifications to Discord",
+
+  "READYCHECK.SettingsStatusResetOnLoadTitle": "Reset Ready Status on Load",
+  "READYCHECK.SettingsStatusResetOnLoadHint": "When the GM Reloads the page, toggle whether all players' Ready Check statuses are reset."
 }
