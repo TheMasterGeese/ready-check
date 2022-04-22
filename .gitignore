@@ -108,3 +108,5 @@ typings/
 
 # gulp output
 out
+
+dist/
