@@ -2,7 +2,7 @@
   "READYCHECK.ChatTextCheck": "is ready!",
   "READYCHECK.ChatTextUserUpdate": "has updated their status to",
 
-  "READYCHECK.DialogContentReadyCheck": "Your GM has has initiated a Ready Check. Click the button below when you're ready to play!",
+  "READYCHECK.DialogContentReadyCheck": "Your GM has has initiated a Ready Check.",
   "READYCHECK.DialogContentStatusUpdate": "Please select an option below to update your ready status.",
   "READYCHECK.DialogTitleReadyCheck": "Ready Check",
   "READYCHECK.DialogTitleStatusUpdate": "Update Ready Status",
@@ -28,8 +28,8 @@
   "READYCHECK.SettingsCheckAlertSoundPathTitle": "Ready Check Alert Sound Path",
   "READYCHECK.SettingsCheckAlertSoundPathHint": "Enter the path of the sound to play when a ready check is started. Leaving this blank will play the default ring sound.",
 
-  "READYCHECK.StatusReady": "Ready",
-  "READYCHECK.StatusNotReady": "Not Ready",
+  "READYCHECK.StatusReady": "I'm Ready",
+  "READYCHECK.StatusNotReady": "I'm Not Ready",
 
   "READYCHECK.UiChangeButton": "Change Ready Status",
   "READYCHECK.UiGmButton": "Initiate Ready Check or Change Ready Status",
