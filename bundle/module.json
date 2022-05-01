@@ -1,0 +1,35 @@
+{
+	"name": "ready-check",
+	"title": "MG Living World - Ready Check",
+	"description": "Allows the GM to prompt their players for a ready check, and for players to respond. Adaptation of 'Ready Set Go! - A Ready Check Module' for Master Geese's Living World Tools.",
+	"version": "2.0.0",
+	"authors": [
+    	"Khankar#2236",
+    	"CRASH1115#2944"
+  	],
+	"minimumCoreVersion": "0.9.0",
+	"compatibleCoreVersion": "0.9.0",
+	"esmodules": ["src/ready-check.js"],
+	"styles": ["css/ready-check.css"],
+	"languages": [
+		{ "lang": "en", "name": "English", "path": "lang/en.json" }
+	],
+  	"packs": [],
+  	"system": [],
+  	"socket": true,
+	  "url":		"https://github.com/TheMasterGeese/ready-check",
+	  "license":	"https://github.com/TheMasterGeese/ready-check/blob/main/LICENSE",
+	  "manifest":	"https://raw.githubusercontent.com/TheMasterGeese/ready-check/main/bundle/module.json",
+	  "download":	"https://raw.githubusercontent.com/TheMasterGeese/ready-check/main/bundle/ready-check.zip",
+	  "readme":		"https://github.com/TheMasterGeese/ready-check/blob/main/README.md",
+	  "changelog":	"https://github.com/TheMasterGeese/ready-check/blob/main/CHANGELOG.md",
+  	"protected": false,
+  	"coreTranslation": false,
+  	"dependencies": [
+		{
+			"name": "discord-integration",
+			"manifest": "https://raw.githubusercontent.com/TheMasterGeese/discord-integration/main/bundle/module.json"
+		}
+	]
+}
+
