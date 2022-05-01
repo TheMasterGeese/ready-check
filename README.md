@@ -1,6 +1,8 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/crash1115/ready-check/total) ![GitHub Releases](https://img.shields.io/github/downloads/crash1115/ready-check/latest/total) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/crash1115/ready-check?label=latest%20version)
 
-Ready Set Go! is a system agnostic module for Foundry VTT designed to help GM's and players communicate when they're ready to play. GM's are given the option to initiate ready checks, and both GM's and players can indicate that they're ready (or not) at any time.
+MG Living World - Ready Check is a system agnostic module for Foundry VTT designed to help GM's and players communicate when they're ready to play. The mod is intended to act as a dependency for other MG Living World mods, but can be enabled on its own as well. GM's are given the option to initiate ready checks, and both GM's and players can indicate that they're ready (or not) at any time.
+
+This mod is based off the ["Ready Check Go!" mod by crash1115](https://github.com/crash1115/ready-check), special thanks to their work on this module.
 
 [![Image from Gyazo](https://i.gyazo.com/daca34d0b06c3de5371f487a27b4f6aa.jpg)](https://gyazo.com/daca34d0b06c3de5371f487a27b4f6aa)
 
@@ -12,6 +14,8 @@ To initiate a ready check, you must be logged in as a user with GM permissions. 
 Video (GM View): https://i.gyazo.com/5b98ca43945d9796833a8912a95a6945.mp4
 
 You can use the Ready Check when you first start up the game, right before combat starts, or when you're taking a quick break so you can see when everyone is back and ready to play!
+
+Is also used within other MG Living World mods, used to control the flow of combat and keep players from missing important notifications.
 
 ## Responding to a Ready Check (GM and Players)
 When a ready check is initiated, a dialog will display on each user's screen. To let everyone know you're ready, just click the "Ready" button at the bottom of the window. When you do so, a green check mark will appear next to your name in the players window.
@@ -38,7 +42,7 @@ You can use this toggle to help your group see when you have to step away to tak
 5. Click Install
 
 # Got Questions?
-Contact me on Discord (CRASH1115#2944).
+Contact either crash1115 (CRASH1115#2944) or MasterGeese(Khankar#2236).
 
 # License
 - This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode).

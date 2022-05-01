@@ -1,3 +1,13 @@
+# Version 2.0.0
+- Initial Release of MG Living World overhaul
+- Added setting to configure whether the game pauses when a Ready Check is initiated
+- Added setting to configure whether the game unpauses when all users with a token in the current scene have indicated they are ready.
+- Added setting to configure whether the game resets all players' ready status upon the GM reloading the page.
+- Added setting to turn on/off integration with the [Discord Integration](https://github.com/TheMasterGeese/Discord-Integration) mod.
+    - When a ready check is initiated, all users with a token in the current scene will be pinged.
+    - When all all users with a token in the current scene have indicated they are ready, the GM is notified.
+- Added initReadyCheck hook for other modules to trigger ready checks.
+    - initReadyCheck hook allows for custom dialog messages to be set.
 # Version 1.2.3
 - Fixed an issue where some readiness indicators would display twice
 
